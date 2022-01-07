@@ -3,7 +3,7 @@
 @import "native";
 @mixin bg-img($img) {
     background-image: url($img);
-    min-height: 400px;
+    min-height: 450px;
 }
 .portfolio-container {
   display: flex;
@@ -187,7 +187,7 @@ body,html {
   filter: grayscale(30%);
   min-height: 85vh;
   padding: 10rem 3rem;
-  @include bg-img( {{'/assets/images/Back.jpg'| relative_url }})
+  @include bg-img("{{'/assets/images/Back.jpg'| relative_url }}")
 }
 
 .bgimg-2 {
