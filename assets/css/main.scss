@@ -4,7 +4,7 @@
 @mixin bg-img($img) {
     background-image: url($img);
     min-height: 400px;
-}  
+}
 .portfolio-container {
   display: flex;
   flex-wrap: wrap;
@@ -187,13 +187,12 @@ body,html {
   filter: grayscale(30%);
   min-height: 85vh;
   padding: 10rem 3rem;
-  background: linear-gradient(90deg, hsla(295, 100%, 61%, 1) 0%, hsla(202, 69%, 48%, 1) 100%);
-
+  @include bg-img('{{/assets/images/Back.jpg}}')
 }
 
 .bgimg-2 {
     padding: 10rem 3rem;
-  background: linear-gradient(90deg, hsla(295, 100%, 61%, 1) 0%, hsla(202, 69%, 48%, 1) 100%);
+    background: linear-gradient(90deg, hsla(295, 100%, 61%, 1) 0%, hsla(202, 69%, 48%, 1) 100%);
 }
 
 .bgimg-3 {
