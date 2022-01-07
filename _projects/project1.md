@@ -8,6 +8,7 @@ image: /assets/images/project1.png
 
 <iframe src="{{'/assets/files/ML.pdf'| relative_url }}" width="100%" height="550px">
 </iframe>
+
 Here, I did my final Capstone project utilising the most accurate Machine Learning model to predict if an existing customer would subsribe to a term deposit with the bank.
 project files to be named according to the following format:
 
