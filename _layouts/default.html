@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body onload="scrollEvent(),animate_progress()" onscroll="scrollEvent(),animate_progress()">
+    {% include nav.html %}
+    <div class="container-fluid">
+        <div class="row bgimg-1 align-items-center" id="home">
+            <div class="col text-light text-center">
+                <h1>Hi I'm Chee Jun Hong</h1>
+                <span>{{site.tagline}}</span>
+            </div>
+        </div>
+        <!-- about me -->
+        <div class="container-fluid" id="about">
+            <h2 class="text-center"><strong>ABOUT</strong></h2>
+            <div class="row p-md-3 mt-4 container">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row mb-4">
+                                <div class="col-sm-6 col-md-12 col-lg-5 mb-3 mb-lg-0">
+                                    <img src="https://raw.githubusercontent.com/pipipapipo/test_web/main/images/pic00.jpg" class="img-fluid rounded" alt="profile-pic"
+                                        width="340" height="340" />
+                                </div>
+                                <div class="col-sm-6 col-md-7">
+                                    <p>
+                                        <span class="title-s">Name: </span>
+                                        <span>Chee Jun Hong</span>
+                                    </p>
+                                    <p>
+                                        <span class="title-s">Profile: </span>
+                                        <span>Humann being</span>
+                                    </p>
+                                    <p>
+                                        <span class="title-s">Email: </span>
+                                        <span style="word-wrap: break-word;">{{site.email}}</span>
+                                    </p>
+                                    <p>
+                                        <span class="title-s">Language: </span>
+                                        <span>English</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="title-s"><i class="fas fa-code"></i> Skills</h3>
+                                <i class="fab fa-html5"></i>
+                                <span>HTML</span>
+                                <span class="pull-right purecounter" data-purecounter-duration="1.5"
+                                    data-purecounter-start="0" data-purecounter-end="85"></span>%
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="progress bar of the skill"
+                                        style="transition: 0.4s" aria-valuenow="85" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
+                                <i class="fab fa-css3"></i>
+                                <span>CSS , 
+                                    <i class="fab fa-sass"></i>
+                                    SCSS</span>
+                                <span class="pull-right purecounter" data-purecounter-duration="1.5"
+                                    data-purecounter-start="0" data-purecounter-end="65"></span>%
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="progress bar of the skill"
+                                        style="transition: 0.8s" aria-valuenow="65" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
+                                <i class="fab fa-bootstrap"></i>
+                                <span>BOOTSTRAP</span>
+                                <span class="pull-right purecounter" data-purecounter-duration="1.5"
+                                    data-purecounter-start="0" data-purecounter-end="75"></span>%
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="progress bar of the skill"
+                                        style="transition: 1s" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <i class="fab fa-js"></i>
+                                <span>JAVASCRIPT</span>
+                                <span class="pull-right purecounter" data-purecounter-duration="1.5"
+                                    data-purecounter-start="0" data-purecounter-end="70"></span>%
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="progress bar of the skill"
+                                        style="transition: 1.2s" aria-valuenow="70" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
+                                <i class="fab fa-python"></i>
+                                <span>PYTHON</span>
+                                <span class="pull-right purecounter" data-purecounter-duration="1.5"
+                                    data-purecounter-start="0" data-purecounter-end="77"></span>%
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="progress bar of the skill"
+                                        style="transition: 1.5s" aria-valuenow="77" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="pt-4 pt-md-0">
+                                <div class="title-box-2">
+                                    <h3>About me</h3>
+                                </div>
+                                    {{site.description}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- portfolio -->
+        <div class="row bgimg-2">
+            <div class="d-flex justify-content-center">
+                <h2 class="wide text-light align-self-center portfolio-head"
+                    style="text-shadow: 1px 2px 5px black; font-size: 36px">PORTFOLIO</h2>
+            </div>
+        </div>
+        <div class="container-fluid p-4 text-center" id="portfolio">
+            <h3 class="mt-3">Projects</h3>
+            <p>
+                <em>Here are some of the projects that I have worked on. <br /> </em>
+            </p>
+            <br />
+            <div class="portfolio-container">
+                {% for project in site.projects %}
+                    <div class="flex-element mb-sm-2">
+                            <div class="card mx-auto" style="width: 22rem;">
+                                {%if project.image%}
+                                <img src="{{project.image}}" class="card-img-top" alt="...">
+                                {%endif%}
+                                <div class="card-body">
+                                  <h5 class="card-title">{{project.title}}</h5>
+                                  <p class="card-text">{{project.description}}</p>
+                                  <a href="{{ project.url }}" class="btn btn-outline-primary mt-3">Open project</a>
+                                </div>
+                              </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <h4 class="mt-4">
+                <a href="https://github.com/pipipapipo" class="text-dark hover-opacity-more">
+                    More on GitHub</a>
+            </h4>
+        </div>
+        <!-- contact -->
+        <div class="row bgimg-3">
+            <div class="d-flex justify-content-center">
+                <h2 class="wide align-self-center text-light contact-head" style="
+              text-shadow: 1px 2px 5px black;
+              font-size: 36px;
+            ">CONTACT</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row p-5" id="contact">
+                <h3 class="text-center">CONTACT ME</h3>
+                <p class="text-center">
+                    <em>I'd love your feedback!</em>
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="contact-mf">
+                        <div id="contact" style="padding: 2rem">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="title-box-2 pt-md-0">
+                                        <h4>Get in Touch</h4>
+                                    </div>
+                                    <div class="more-info">
+                                        <p class="lead">
+                                            If you want to contact me you can send me a message from
+                                            here, or you can directly email me in the email
+                                            below. You can find my social media handles below. You
+                                            can also contact me through them.
+                                        </p>
+                                        <ul class="list-ico">
+                                            <li>
+                                                <i class="fas fa-map-marker-alt"></i> {{site.location}}
+                                            </li>
+                                            <li>
+                                                <span class="far fa-envelope"></span>
+                                                <a style="word-wrap: break-word;" href="mailto:{{site.email}}"
+                                                    class="text-dark">{{site.email}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="socials">
+                                        <ul>
+                                            <li style="padding-left: 0">
+                                                <a target="_blank" rel="noopener" href="https://github.com/{{site.github}}"
+                                                    aria-label="github account link"><span class="ico-circle"><i
+                                                            class="fab fa-github"></i></span></a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" rel="noopener"
+                                                    href="https://instagram.com/{{site.instagram}}"
+                                                    aria-label="instagram account link"><span class="ico-circle"><i
+                                                            class="fab fa-instagram"></i></span></a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://twitter.com/{{site.twitter}}"
+                                                    aria-label="twitter account link"><span class="ico-circle"><i
+                                                            class="fab fa-twitter"></i></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include footer.html %}
+</body>
+
+</html>

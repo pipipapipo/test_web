@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body onload="scrollEvent(),animate_progress()" onscroll="scrollEvent(),animate_progress()">
+    <nav class="navbar navbar-expand-sm navbar-light shadow fixed-top text-center" id="navbar">
+        <div class="container-fluid" style="position: sticky">
+            <a class="navbar-brand" href="/">Chee Jun Hong</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto nav-items">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/"><i class="fa fa-home"></i> HOME</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main style="padding: 6rem 5rem 10rem 5rem;">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+    </main>
+    {% include footer.html %}
+</body>
+
+
+</html>

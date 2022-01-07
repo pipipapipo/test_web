@@ -1,0 +1,23 @@
+title: Chee Jun Hong
+email: 
+description: >-
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. You'll find all of your configurations in your _config.yml file
+tagline: A human being
+baseurl: ""
+url: ""
+
+# personal info
+github: pipipapipo
+twitter: ""
+instagram: ""
+email: "Chee@example.com"
+location: singapore
+
+sass:
+  style: compressed
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
