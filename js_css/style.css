@@ -309,6 +309,10 @@ button:hover {
 .box img{
     max-width: 100%;
 }
+.box button{
+cursor: pointer;
+}
+    
 .services .serv-content .card:hover{
     background: crimson;
 }
