@@ -187,7 +187,7 @@ body,html {
   filter: grayscale(30%);
   min-height: 85vh;
   padding: 10rem 3rem;
-  @include bg-img("{{'/assets/images/Jun Portraits-141.jpg'| relative_url }}")
+  @include bg-img("{{'/assets/images/S141.jpg'| relative_url }}")
 }
 
 .bgimg-2 {
